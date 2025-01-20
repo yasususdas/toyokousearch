@@ -1,0 +1,99 @@
+body {
+    font-family: sans-serif;
+}
+
+.header {
+    height: 13vh;
+    background-image: url(../img/background.jpeg);
+    background-position: center ;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    z-index: 1000; /* 高い値を設定 */
+}
+
+.logo {
+    margin-block: auto;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav ul {
+    background: #333333;
+    font-size: large;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 20px 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.text {
+    padding: 20px 10%;
+}
+
+.sheet { 
+    text-align: center;
+}
+
+nav.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333333;
+    color: white;
+    display: flex;
+    padding: 5px 3%;
+    transition: 0.5s;
+}
+
+nav.sticky.logo {
+    margin-top: 10px;
+}
+
+nav.sticky ul {
+    background-color: transparent;
+    font-size: 1.3rem;
+    text-align: right;
+    margin-right: 10%; /* スクロールした後のバーのリスト部分右揃え */
+}
+
+/* 地図の親要素 */
+.map-container {
+    position: relative; /* 子要素を絶対位置で配置するための基準 */
+    z-index: 1; /* ナビゲーションバーより低い値に設定 */
+    width: 100%; /* 地図画像の幅 */
+    height: auto; /* 地図画像の高さ */
+    margin: 0 auto; /* 中央揃え */
+    overflow: hidden; /* 必要に応じて地図外のピンを非表示にする */
+    border: 5px solid #333333; /* 地図の枠を黒色で5pxの太さで設定 */
+    display: inline-block;
+}
+
+/* 地図画像 */
+.map-container .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ピン共通スタイル */
+.map-container .pin {
+    position: absolute; /* 画像上に自由に配置するために絶対位置を使用 */
+    width: 3.27%;        /* ピン画像のサイズ（調整可能） */
+    height: auto;
+    transform: translate(-50%, -100%); /* ピンの先端を正確な位置に合わせる */
+}
