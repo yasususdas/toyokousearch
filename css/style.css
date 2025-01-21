@@ -105,25 +105,6 @@ nav ul li a {
 .map-container .pin {
         width: 5%; /* ピンを少し大きくする */
     }
-
-/*stickyクラスの追加部分*/
-nav.sticky {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: #333333;
-    color: white;
-    display: flex;
-    padding: 5px 3%;
-    transition: 0.5s;
-}
-
-nav.sticky ul {
-    background-color: transparent;
-    font-size: 1.0rem;
-    margin: 0 0 0 auto;
-    margin-right: 10%; /* スクロールした後のバーのリスト部分右揃え */
-}
 }
 
 /* PCデバイス（幅769px以上） */
