@@ -1,0 +1,195 @@
+body {
+    font-family: sans-serif;
+}
+
+/* グローバルスタイル */
+.header {
+    height: 13vh;
+    background-image: url(../img/background.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    z-index: 1000; /* 高い値を設定 */
+}
+
+.logo {
+    color: #333333;
+    margin-block: auto;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+nav ul {
+    background: #333333;
+    font-size: large;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.text {
+    padding: 20px 10%;
+}
+
+.sheet { 
+    text-align: center;
+}
+
+nav.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333333;
+    color: white;
+    display: flex;
+    padding: 5px 3%;
+    transition: 0.5s;
+}
+
+nav.sticky.logo {
+    margin-top: 10px;
+}
+
+nav.sticky ul {
+    background-color: transparent;
+    font-size: 1.3rem;
+    text-align: right;
+    margin-right: 10%; /* スクロールした後のバーのリスト部分右揃え */
+}
+
+/* 地図の親要素 */
+.map-container {
+    position: relative; /* 子要素を絶対位置で配置するための基準 */
+    z-index: 1; /* ナビゲーションバーより低い値に設定 */
+    width: 100%; /* 地図画像の幅 */
+    height: auto; /* 地図画像の高さ */
+    margin: 0 auto; /* 中央揃え */
+    overflow: hidden; /* 必要に応じて地図外のピンを非表示にする */
+    border: 5px solid #333333; /* 地図の枠を黒色で5pxの太さで設定 */
+    display: inline-block;
+}
+
+/* 地図画像 */
+.map-container .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ピン共通スタイル */
+.map-container .pin {
+    position: absolute; /* 画像上に自由に配置するために絶対位置を使用 */
+    width: 3.27%;        /* ピン画像のサイズ（調整可能） */
+    height: auto;
+    transform: translate(-50%, -100%); /* ピンの先端を正確な位置に合わせる */
+}
+
+/* ==========================
+レスポンシブデザインの追加
+========================== */
+
+/* モバイルデバイス（幅768px以下） */
+@media screen and (max-width: 768px) {
+    .header {
+        height: 9vh;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        font-size: medium;
+    }
+
+    nav ul li {
+        margin: 10px 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+.text-area .text {
+    font-size: 0.8rem; /* 文字サイズを大きく設定 */
+    font-weight: bold; /* 太字 */
+    line-height: 0.7; /* 行間を調整（必要に応じて） */
+    text-align: center; /* 必要なら中央揃え */
+    color: #333333; /* 文字色を変更 */
+}
+
+    .text {
+        padding: 10px 5%;
+    }
+
+.map-container {
+    width: 98%; /* 地図の幅を縮小 */
+    border: 3px solid #333333; /* 枠を細くする */
+    margin: 0 auto; /* 横方向の中央揃え */
+    display: block; /* 中央揃えを有効にするための設定 */
+}
+
+    .map-container .pin {
+        width: 5%; /* ピンを少し大きくする */
+    }
+}
+
+/* PCデバイス（幅769px以上） */
+@media screen and (min-width: 769px) {
+    .header {
+        height: 13vh;
+    }
+
+    nav {
+        padding: 20px 0;
+    }
+
+    nav ul {
+        font-size: 1.7rem;
+    }
+
+    nav ul li {
+        margin: 25px 25px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+.text-area .text {
+    font-size: 1.5rem; /* 文字サイズを大きく設定 */
+    font-weight: bold; /* 太字 */
+    line-height: 0.5; /* 行間を調整（必要に応じて） */
+    text-align: center; /* 必要なら中央揃え */
+    color: #333333; /* 文字色を変更 */
+}
+
+    .text {
+        padding: 20px 10%;
+    }
+
+.map-container {
+    width: 99%; /* 地図の幅を縮小 */
+    border: 5px solid #333333; /* 枠を細くする */
+    margin: 0 auto; /* 横方向の中央揃え */
+    display: block; /* 中央揃えを有効にするための設定 */
+}
+
+    .map-container .pin {
+        width: 3.27%;
+    }
+}
