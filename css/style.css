@@ -33,8 +33,8 @@ body {
 
 /*レスポンシブデザインの追加*/
 
-/* モバイルデバイス（幅768px以下） */
-@media screen and (max-width: 1024px) {
+/* モバイルデバイス（幅1023px以下） */
+@media screen and (max-width: 1023px) {
 
 .header {
     height: 85px;
@@ -126,7 +126,7 @@ nav.sticky ul {
 }
 }
 
-/* PCデバイス（幅769px以上） */
+/* PCデバイス（幅1024px以上） */
 @media screen and (min-width: 1024px) {
 .header {
     height: 85px;
